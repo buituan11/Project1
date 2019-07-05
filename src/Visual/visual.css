@@ -1,0 +1,55 @@
+.visual{
+	background: url(https://res.cloudinary.com/buituan/image/upload/v1562319274/Project1/bg.jpg) center center fixed;
+	background-size: cover;
+	background-color: red;
+	height: 700px;
+	z-index: -1;
+	padding: 0px;
+	/*filter: blur(3px);*/
+}
+.visual-title{
+	height: 50%;
+	background-color: #00000070;
+	text-align: center;
+	padding-top: 10%;
+}
+.visual-title p{
+	margin-bottom: 0px;
+	color: white;
+	font-size: 40px;
+	font-weight: bold;
+}
+.visual-detail{
+	padding:0% 25% 10% 25%;
+	list-style-type: none;
+	height: 50%;
+	background-color: #00000070;
+	color: white;
+	display: grid;
+	grid-template-columns: repeat(4,minmax(150px,0.5fr));
+	grid-template-rows: repeat(2,minmax(150px,1fr));
+	grid-gap: 10px;
+}
+.visual-detail li{
+	background-color: #0000009e;
+}
+.visual-detail li a{
+	text-decoration: none;
+	color: white;
+}
+.visual-detail li a:after{
+	width: 60px;
+	height: 60px;
+	background-image: url(https://res.cloudinary.com/buituan/image/upload/v1562321707/Project1/main-icon-common.png);
+	background-position: 0px 0px;	
+	background-size: cover;
+}
+.visual-detail li a img{
+	margin-top: 20%;
+	margin-bottom: 10%;
+	width: 60px;
+	height: 60px;
+}
+.visual-detail li:hover{
+	background-color: var(--redColor);
+}
