@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App container-fluid">
       <Header/>
-      <div style={{backgroundColor: 'white', height: '400px'}}>
+      <div style={{backgroundColor: 'green', height: '400px'}}>
       </div>
       <div style={{backgroundColor: 'yellow', height: '400px'}}>
       </div>

@@ -10,7 +10,7 @@ class Menu2 extends Component {
         return (
             <div className="menu2 container-fluid">
            		<div className="row">
-           			<div className="menu2-title col-md-3" onLoad={(e)=> this.changeWidth()}>
+           			<div className="menu2-title col-md-3">
            				<h1> { this.props.title } </h1>
            				<button style={{bottom: '55px'}}> { this.props.button1 } <i className="fas fa-globe" /></button>
            				<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>

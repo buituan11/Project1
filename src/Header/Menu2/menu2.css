@@ -1,11 +1,12 @@
 .menu2{
 	display: none;
 	width: 95%;
-	height: 200px;
+	height: 300px;
 	position: absolute;
-	bottom: -216px;
+	bottom: -315px;
 	left: 0px;
 	background-color: white;
+	border-top: 0.5px solid black;
 }
 .menu2-title{
 	height: 100%;

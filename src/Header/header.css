@@ -1,6 +1,6 @@
 header{
 	position: fixed;
-	/*background-color: yellow;*/
+	background-color: white;
 }
 .row{
 	height: 100%;
@@ -15,7 +15,6 @@ header{
 	/*height: 50%;*/
 	padding: 1% 0% 1% 0%;
 	display: flex;
-	flex-direction: row;
 	flex-direction: row-reverse;
 	align-items: baseline;
 }
