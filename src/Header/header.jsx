@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import './header.css';
-
+import Menu2 from './Menu2/menu2.jsx';
 class Header extends Component {
     constructor(props) {
         super(props);
+        this.state ={
+           	arrTinhNang: ['NỀN TẢNG WEB', 'QUẢN LÝ KHO', 'SẢN XUẤT', 'BÁN HÀNG', 'MUA HÀNG', 'KẾ TOÁN', 'BẢNG LƯƠNG', 'QUẢN LÝ NHÓM'],
+          	arrECOUNT: ['GIẢI PHÁP HỢP LÝ', 'VÌ SAO CHỌN ECOUNT?', 'LƯU Ý TRƯỚC KHI MUA PHẦN MÊM ERP'],
+          	arrDichVu: ['HỖ TRỢ VÀ ĐÀO TẠO', 'CẬP NHẬT HỆ THỐNG', 'HỆ THỐNG BẢO MẬT', 'SAO LƯU & PHỤC HỒI DỮ LIỆU', 'DỊCH VỤ TƯ VẤN KHÁCH HÀNG', 'HƯỚNG DẪN SỬ DỤNG ONLINE]'],
+          	arrSanPham: ['BẢNG GIÁ', 'GẶP TRỰC TIẾP', 'PHIÊN BẢN MÔ PHỎNG', 'GIỚI THIỆU TRỰC TUYẾN', 'PHIÊN BẢN DÙNG THỬ', 'TẠI SAO CHÚNG TA CẦN ĐẾN ECOUNT?', 'ECOUNT CÓ THỂ GIÚP TÔI NHƯ THÉ NÀO', 'HỆ THỐNG VIDEO', 'HỘI THẢO GIỚI THIỆU', 'HỎI ĐÁP'],
+          	arrGioiThieu: ['GIỚI THIỆU', 'VỀ ĐỘI NGŨ CỦA CHÚNG TÔI', 'LIÊN HỆ', 'Ý KIẾN KHÁCH HÀNG']
+        }
     }
-
     render() {
         return (
            <header className="container-fluid">
@@ -23,107 +29,41 @@ class Header extends Component {
            					</div>
            					<a href="#"> <i className="fas fa-headphones-alt"/> 000-0000-0000 </a>
            				</div>
-           				<nav className="menu container-fluid">
-           					<div className="menu1">
+           				<nav className="menu container-fluid">		
+           					<div className="menu1">			{/* Tính năng ERP*/}
            						<a href="#"> TÍNH NĂNG ERP </a>
-           						<div className="menu2 container-fluid">
-           							<div className="row">
-           								<div className="menu2-title col-md-3">
-           									<h1> TÍNH NĂNG </h1>
-           									<button style={{bottom: '55px'}}> PHIÊN BẢN MÔ PHỎNG <i className="fas fa-globe" /></button>
-           									<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
-           								</div>
-           								<div className="menu2-detail col-md-9">
-           									<p>NỀN TẢNG WEB</p>
-           									<p>QUẢN LÝ KHO</p>
-           									<p>SẢN XUẤT</p>
-           									<p>BÁN HÀNG</p>
-           									<p>MUA HÀNG</p>
-           									<p>KẾ TOÁN</p>
-           									<p>BẢNG LƯƠNG</p>
-           									<p>QUẢN LÝ NHÓM</p>
-           								</div>
-           							</div>
-           						</div>		{/*Tính năng ERP*/}
+           						<Menu2 
+           							title={ "TÍNH NĂNG" }
+           							button1={ "PHIÊN BẢN MÔ PHỎNG" }
+           							detail={this.state.arrTinhNang}/>		
            					</div>
-           					<div className="menu1">
+           					<div className="menu1">			{/*Về ECOUNT ERP*/}
            						<a href="#"> VỀ ECOUNT ERP </a>
-           						<div className="menu2 container-fluid">
-           							<div className="row">
-           								<div className="menu2-title col-md-3">
-           									<h1> VỀ ECOUNT ERP </h1>
-           									<button style={{bottom: '55px'}}> TÍNH NĂNG <i className="fas fa-globe" /></button>
-           									<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
-           								</div>
-           								<div className="menu2-detail col-md-9">
-           									<p>GIẢI PHÁP HỢP LÝ</p>
-           									<p>VÌ SAO CHỌN ECOUNT?</p>
-           									<p>LƯU Ý TRƯỚC KHI MUA PHẦN MÊM ERP</p>
-           								</div>
-           							</div>
-           						</div>		{/*Về ECOUNT ERP*/}
+           						<Menu2
+           							title={'VỀ ECOUNT ERP'}
+           							button1={'TÍNH NĂNG'}
+           							detail={ this.state.arrECOUNT }/>	
            					</div>
            					<div className="menu1">		   {/*Dịch vụ*/}
            						<a href="#"> DỊCH VỤ </a>
-           						<div className="menu2 container-fluid">
-           							<div className="row">
-           								<div className="menu2-title col-md-3">
-           									<h1> DỊCH VỤ </h1>
-           									<button style={{bottom: '55px'}}> TÍNH NĂNG <i className="fas fa-globe" /></button>
-           									<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
-           								</div>
-           								<div className="menu2-detail col-md-9">
-           									<p>HỖ TRỢ VÀ ĐÀO TẠO</p>
-           									<p>CẬP NHẬT HỆ THỐNG</p>
-           									<p>HỆ THỐNG BẢO MẬT</p>
-           									<p>SAO LƯU & PHỤC HỒI DỮ LIỆU</p>
-           									<p>DỊCH VỤ TƯ VẤN KHÁCH HÀNG</p>
-           									<p>HƯỚNG DẪN SỬ DỤNG ONLINE</p>
-           								</div>
-           							</div>
-           						</div>
+           						<Menu2
+           							title={'DỊCH VỤ'}
+           							button1={'TÍNH NĂNG'}
+           							detail={ this.state.arrDichVu }/>
            					</div>
            					<div className="menu1">			{/*Sản phẩm*/}
            						<a href="#"> SẢN PHẨM </a>
-           						<div className="menu2 container-fluid">
-           							<div className="row">
-           								<div className="menu2-title col-md-3">
-           									<h1> TÍNH NĂNG </h1>
-           									<button style={{bottom: '55px'}}> PHIÊN BẢN MÔ PHỎNG <i className="fas fa-globe" /></button>
-           									<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
-           								</div>
-           								<div className="menu2-detail col-md-9">
-           									<p>BẢNG GIÁ</p>
-           									<p>GẶP TRỰC TIẾP</p>
-           									<p>PHIÊN BẢN MÔ PHỎNG</p>
-           									<p>GIỚI THIỆU TRỰC TUYẾN</p>
-           									<p>PHIÊN BẢN DÙNG THỬ</p>
-           									<p>TẠI SAO CHÚNG TA CẦN ĐẾN ECOUNT?</p>
-           									<p>ECOUNT CÓ THỂ GIÚP TÔI NHƯ THÉ NÀO</p>
-           									<p>HỆ THỐNG VIDEO</p>
-           									<p>HỘI THẢO GIỚI THIỆU</p>
-           									<p>HỎI ĐÁP</p>
-           								</div>
-           							</div>
-           						</div>
+           						<Menu2 
+           							title={ 'SẢN PHẨM '}
+           							button1={'TÍNH NĂNG'}
+           							detail={ this.state.arrSanPham }/>
            					</div>
            					<div className="menu1">			{/*Giới thiệu*/}
            						<a href="#"> GIỚI THIỆU </a>
-           						<div className="menu2 container-fluid">
-           							<div className="row">
-           								<div className="menu2-title col-md-3">
-           									<h1> GIỚI THIỆU </h1>
-           									<button style={{bottom: '55px'}}> PHIÊN BẢN MÔ PHỎNG <i className="fas fa-globe" /></button>
-           									<button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
-           								</div>
-           								<div className="menu2-detail col-md-9">
-           									<p>GIỚI THIỆU</p>
-           									<p>VỀ ĐỘI NGŨ CỦA CHÚNG TÔI</p>
-           									<p>LIÊN HỆ</p>
-           									<p>Ý KIẾN KHÁCH HÀNG</p>
-           								</div>
-           							</div>
-           						</div>
+           						<Menu2 
+           							title={ 'GIỚI THIỆU '}
+           							button1={'TÍNH NĂNG'}
+           							detail={ this.state.arrGioiThieu }/>
            					</div>
            				</nav>
            			</div>
