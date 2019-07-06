@@ -37,13 +37,6 @@
 	text-decoration: none;
 	color: white;
 }
-.visual-detail li a:after{
-	width: 60px;
-	height: 60px;
-	background-image: url(https://res.cloudinary.com/buituan/image/upload/v1562321707/Project1/main-icon-common.png);
-	background-position: 0px 0px;	
-	background-size: cover;
-}
 .visual-detail li a img{
 	margin-top: 20%;
 	margin-bottom: 10%;

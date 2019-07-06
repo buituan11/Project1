@@ -7,7 +7,6 @@ class Visual extends Component {
 
     render() {
         return (
-        <div>
         	<div className="visual container-fluid">
 	        	<div className="visual-title">
 	        			<p>Hãy trải nghiệm tất cả tính năng của ECOUNT ERP</p>
@@ -25,8 +24,6 @@ class Visual extends Component {
 	        		<li><a href="#"><img src="Img/icon/icon-quan-ly-nhom.png" alt=""/><br/>QUẢN LÝ NHÓM</a></li>
 	        	</ul>
 	        </div>
-        	</div>
-
         );
     }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/header.jsx';
-import Visual from '../Visual/visual';
+import Main from '../Main/main.jsx';
+import Footer from '../Footer/footer.jsx';
 function App() {
   return (
     <div className="App container-fluid">
       <Header/>
-      <Visual/>
+      <Main/>
+      <Footer/>
       {/*<div style={{backgroundColor: 'green', height: '400px'}}>
       </div>
       <div style={{backgroundColor: 'yellow', height: '400px'}}>

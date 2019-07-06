@@ -1,0 +1,48 @@
+.statistic{
+	background: url('https://res.cloudinary.com/buituan/image/upload/v1562404233/Project1/contents-bg.jpg') no-repeat 0 0;
+	background-size: cover;
+	color: white;
+}
+.statistic p{
+	margin: 0px;
+}
+.statistic>p.statistic-title{
+	padding-top: 90px;
+	margin: 0px;
+	background-color: #000000a6;
+	font-size: 40px;
+	font-weight: bold;
+}
+.statistic ul{
+	margin: 0px;	
+	list-style-type: none;
+	background-color: #000000a6;
+	padding: 90px 10% 5% 10%;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(200px, 1fr));
+	grid-gap: 20px;
+}
+.statistic h1{
+	font-size: 30px;
+	font-weight: bold;
+}
+.statistic p{
+	font-size: 25px;
+}
+.more-statistic{
+	padding: 80px 10% 30px 10%;
+	background-color: #000000db;
+
+}
+.more-statistic p{
+	font-size: 40px;
+	font-weight: bold;
+}
+.more-statistic button{
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	margin-top: 50px;
+	padding: 10px 5% 10px 5%;
+	font-size: 25px;
+}
