@@ -39,10 +39,15 @@
 	font-weight: bold;
 }
 .more-statistic button{
-	background-color: white;
-	color: black;
-	border: 2px solid black;
+	background-color: transparent;
+	color: white;
+	border: 2px solid white;
 	margin-top: 50px;
 	padding: 10px 5% 10px 5%;
 	font-size: 25px;
+}
+.more-statistic button:hover{
+	background-color: white;
+	color: black;
+	border: 2px solid white;
 }
