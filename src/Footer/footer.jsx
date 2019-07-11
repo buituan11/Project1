@@ -11,7 +11,7 @@ class Footer extends Component {
             <div className="row">
             	<div className="location col-md-4">
             		<a href="#">
-	            		<i class="fas fa-map-marker-alt"></i> LIÊN HỆ:<br/>
+	            		<i className="fas fa-map-marker-alt"></i> LIÊN HỆ:<br/>
 						Lầu 6, 51 Nguyễn Cư Trinh, Phường Nguyễn Cư Trinh,<br/>
 						Quận 1, Hồ Chí Minh, Việt Nam <br/> <br/>
 					</a>

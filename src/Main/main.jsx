@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import './main.css';
-import './visual.css';
-import './comment.css';
-import './statistic.css';
-import './merit.css';
 
 class Main extends Component {
     constructor(props) {
