@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
 import './header.css';
-import Menu2 from './Menu2/menu2.jsx';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
         super(props);
     }
+
+    showMenu2 = (title, button1, detail) =>{
+      return (
+            <div className="menu2 container-fluid">
+              <div className="row">
+                <div className="menu2-title col-md-3">
+                  <h1> { title } </h1>
+                  <button style={{bottom: '55px'}}> { button1 } <i className="fas fa-globe" /></button>
+                  <button style={{bottom: '10px'}}> LIÊN HỆ <i className="far fa-comment-alt" /> </button>
+                </div>
+                <div className="menu2-detail col-md-9">                 
+                  { detail.routes.map((item, index) => <NavLink key={index} to={item.path} > {item.title} </NavLink>)}
+                </div>
+              </div>
+            </div>
+        );
+    }
     render() {
         return (
            <header className="container-fluid">
            		<div className="row">
            			<div className="icon col-md-3">
-           				<NavLink to="/"> <img src="Img/icon.png" alt="icon"/></NavLink>
+           				<NavLink to="/"> <img src="https://res.cloudinary.com/buituan/image/upload/v1562254248/Project1/icon.png" alt="icon"/></NavLink>
            			</div>
            			<div className="navBar col-md-9">
            				<div className="contact container-fluid">
@@ -26,39 +42,24 @@ class Header extends Component {
            				</div>
            				<nav className="menu container-fluid">		
            					<div className="menu1">			{/* Tính năng ERP*/}
-           						<NavLink to="/tinh-nang"> TÍNH NĂNG ERP </NavLink>
-           						<Menu2 
-           							title={ "TÍNH NĂNG" }
-           							button1={ "PHIÊN BẢN MÔ PHỎNG" }
-           							detail={this.props.tinhNang}/>		
+           						<NavLink to={ this.props.tinhNang.routes[0].path }> TÍNH NĂNG ERP </NavLink>	
+                      { this.showMenu2(this.props.tinhNang.title, "PHIÊN BẢN MÔ PHỎNG", this.props.tinhNang)}	
            					</div>
            					<div className="menu1">			{/*Về ECOUNT ERP*/}
-           						<NavLink to="/ecount-erp"> VỀ ECOUNT ERP </NavLink>
-           						<Menu2
-           							title={'VỀ ECOUNT ERP'}
-           							button1={'TÍNH NĂNG'}
-           							detail={ this.props.ecount }/>	
+           						<NavLink to={ this.props.ecount.routes[0].path }> VỀ ECOUNT ERP </NavLink> 
+                      { this.showMenu2(this.props.ecount.title, "TÍNH NĂNG", this.props.ecount)}	
            					</div>
            					<div className="menu1">		   {/*Dịch vụ*/}
-           						<NavLink to="/dich-vu"> DỊCH VỤ </NavLink>
-           						<Menu2
-           							title={'DỊCH VỤ'}
-           							button1={'TÍNH NĂNG'}
-           							detail={ this.props.dichVu }/>
+           						<NavLink to={ this.props.dichVu.routes[0].path }> DỊCH VỤ </NavLink> 
+                      { this.showMenu2(this.props.dichVu.title, "TÍNH NĂNG", this.props.dichVu)}
            					</div>
            					<div className="menu1">			{/*Sản phẩm*/}
-           						<NavLink to="/san-pham"> SẢN PHẨM </NavLink>
-           						<Menu2 
-           							title={ 'SẢN PHẨM '}
-           							button1={'TÍNH NĂNG'}
-           							detail={ this.props.sanPham }/>
+           						<NavLink to={ this.props.sanPham.routes[0].path }> SẢN PHẨM </NavLink> 
+                      { this.showMenu2(this.props.sanPham.title, "TÍNH NĂNG", this.props.sanPham)}
            					</div>
            					<div className="menu1">			{/*Giới thiệu*/}
-           						<NavLink to="/gioi-thieu"> GIỚI THIỆU </NavLink>
-           						<Menu2 
-           							title={ 'GIỚI THIỆU '}
-           							button1={'TÍNH NĂNG'}
-           							detail={ this.props.gioiThieu }/>
+           						<NavLink to={ this.props.gioiThieu.routes[0].path }> GIỚI THIỆU </NavLink> 
+                      { this.showMenu2(this.props.gioiThieu.title, "TÍNH NĂNG", this.props.gioiThieu)}
            					</div>
            				</nav>
            			</div>
