@@ -13,10 +13,20 @@ class Content extends Component {
     showSideBar = ( sidebar ) => {
     	return sidebar.routes.map((item, index) =>
     		<li key={ index }> 
-				<NavLink to={item.path} activeClassName="active-side-bar">
-					{ item.title  }
+				<NavLink to={item.subroute[0].path} activeClassName="active-side-bar" >
+					{ item.title } <i className="fas fa-chevron-down"/>
 				</NavLink> 
+				{item.subroute.map((e,index)=>
+					<NavLink to={e.path} activeClassName="active-sub-route" className="sub-route">
+						{e.title}
+					</NavLink>
+				)}
 			</li>
+    	);
+    }
+    showItem = (title) =>{
+    	return(
+    		<Item title={title}/>
     	);
     }
     render() {
@@ -30,8 +40,10 @@ class Content extends Component {
 							{ this.showSideBar( this.props.sidebar )}
 						</ul>
 				</div>
-				{this.props.sidebar.routes.map((item, index) =>
-					<Route key={index} exact path={item.path} component={ Item }/>
+				{this.props.sidebar.routes.map((item) =>
+					item.subroute.map((e, index) =>
+						<Route key={index} exact path={e.path} component={ ()=> this.showItem(e.title) }/>
+					)
 				)}
 			</div>
 			</div>      

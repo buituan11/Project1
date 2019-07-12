@@ -15,7 +15,6 @@ class App extends Component {
                 routes:[
                   {
                     title: "NỀN TẢNG WEB",
-                    path: "/tinh-nang/nen-tang-web",
                     subroute: [
                       {
                         title: "Tính năng 1",
@@ -29,7 +28,6 @@ class App extends Component {
                   },
                   {
                     title: "QUẢN LÝ KHO",
-                    path: "/tinh-nang/quan-ly-kho",
                     subroute: [
                       {
                         title: "Quản lý 1",
@@ -48,7 +46,6 @@ class App extends Component {
                 routes:[
                   {
                     title: "GIẢI PHÁP HỢP LÝ",
-                    path: "/ve-ecount-erp/giai-phap",
                     subroute: [
                       {
                         title: "Giải pháp 1",
@@ -62,7 +59,6 @@ class App extends Component {
                   },
                   {
                     title: "VÌ SAO CHỌN ECOUNT",
-                    path: "/ve-ecount-erp/vi-sao-chon-ecount",
                     subroute: [
                       {
                         title: "Vì sao 1",
@@ -81,7 +77,6 @@ class App extends Component {
                 routes:[
                   {
                     title: "HỖ TRỢ ĐÀO TẠO",
-                    path: "/dich-vu/ho-tro",
                     subroute: [
                       {
                         title: "Hỗ trợ 1",
@@ -95,7 +90,6 @@ class App extends Component {
                   },
                   {
                     title: "CẬP NHẬT HỆ THỐNG",
-                    path: "/dich-vu/cap-nhat",
                     subroute: [
                       {
                         title: "Cập nhật 1",
@@ -114,7 +108,6 @@ class App extends Component {
                 routes:[
                   {
                     title: "BẢNG GIÁ",
-                    path: "/san-pham/bang-gia",
                     subroute: [
                       {
                         title: "BẢNG GIÁ 1",
@@ -128,7 +121,6 @@ class App extends Component {
                   },
                   {
                     title: "GẶP TRỰC TIẾP",
-                    path: "/dich-vu/gap-truc-tiep",
                     subroute: [
                       {
                         title: "Gặp trực tiếp 1",
@@ -147,7 +139,6 @@ class App extends Component {
                 routes:[
                   {
                     title: "Giới THIỆU",
-                    path: "/gioi-thieu/gioi-thieu-chung",
                     subroute: [
                       {
                         title: "Giới thiệu 1",
@@ -161,7 +152,6 @@ class App extends Component {
                   },
                   {
                     title: "VỀ ĐỘI NGŨ CHÚNG TÔI",
-                    path: "/gioi-thieu/about-us",
                     subroute: [
                       {
                         title: "VỀ CHÚNG TÔI 1",
@@ -174,8 +164,7 @@ class App extends Component {
                     ]  
                   }
                 ]
-            },
-            arrGioiThieu: ['5GIỚI THIỆU', 'VỀ ĐỘI NGŨ CỦA CHÚNG TÔI', 'LIÊN HỆ', 'Ý KIẾN KHÁCH HÀNG']
+            }
         }
     }
 
@@ -202,19 +191,19 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={ Main }/>
               {this.state.arrTN.routes.map((item, index)=>
-                  <Route key={index} path={ item.path } component={ ()=>this.RenderContent( this.state.arrTN)}/>
+                  <Route key={index} path={ item.subroute[0].path } component={ ()=>this.RenderContent( this.state.arrTN)}/>
               )}
               {this.state.arrEC.routes.map((item, index)=>
-                  <Route key={index} path={ item.path } component={ ()=>this.RenderContent( this.state.arrEC)}/>
+                  <Route key={index} path={ item.subroute[0].path } component={ ()=>this.RenderContent( this.state.arrEC)}/>
               )}
               {this.state.arrDV.routes.map((item, index)=>
-                  <Route key={index} path={ item.path } component={ ()=>this.RenderContent( this.state.arrDV)}/>
+                  <Route key={index} path={ item.subroute[0].path } component={ ()=>this.RenderContent( this.state.arrDV)}/>
               )}
               {this.state.arrSP.routes.map((item, index)=>
-                  <Route key={index} path={ item.path } component={ ()=>this.RenderContent( this.state.arrSP)}/>
+                  <Route key={index} path={ item.subroute[0].path } component={ ()=>this.RenderContent( this.state.arrSP)}/>
               )}
               {this.state.arrGT.routes.map((item, index)=>
-                  <Route key={index} path={ item.path } component={ ()=>this.RenderContent( this.state.arrGT)}/>
+                  <Route key={index} path={ item.subroute[0].path } component={ ()=>this.RenderContent( this.state.arrGT)}/>
               )}
             </Switch>
             <Footer/>
