@@ -40,6 +40,7 @@
 .visual-detail li a{
 	text-decoration: none;
 	color: white;
+	width: 100%;
 }
 .visual-detail li a img{
 	margin-top: 20%;
@@ -94,14 +95,20 @@
 	font-size: 20px;
 	font-weight: bold;
 }
-.more-comment button{
+.more-comment button {
 	padding: 10px 20px 10px 20px;
 	border: 2px solid #00487A;
 	color: #00487A;
 	background-color: white;
 }
+.more-comment a{
+	text-decoration: none;
+	color: #00487A;
+}
 .more-comment button:hover{
 	background-color:  #00487A;
+}
+.more-comment button:hover a{
 	color: white;
 }
 /*COMMENT*/
@@ -148,16 +155,21 @@
 }
 .more-statistic button{
 	background-color: transparent;
-	color: white;
 	border: 2px solid white;
 	margin-top: 50px;
 	padding: 10px 5% 10px 5%;
 	font-size: 25px;
 }
+.more-statistic a{
+	text-decoration: none;
+	color: white;
+}
 .more-statistic button:hover{
 	background-color: white;
-	color: black;
 	border: 2px solid white;
+}
+.more-statistic button:hover a{
+	color: black;
 }
 /*STATISTIC*/
 /*MERIT*/
@@ -209,6 +221,10 @@
 	color: white;
 	padding: 10px 5% 10px 5%;
 	font-size: 20px;
+}
+.trial a{
+	text-decoration: none;
+	color: white;
 }
 .trial button:hover{
 	background-color: #BF0D0D;

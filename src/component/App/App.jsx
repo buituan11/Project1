@@ -4,6 +4,7 @@ import Header from '../Header/header.jsx';
 import Main from '../Main/main.jsx';
 import Footer from '../Footer/footer.jsx';
 import Content from '../ContentPage/contentpage.jsx';
+import NoMatch from '../NoMatch/nomatch.jsx';
 import { BrowserRouter as Router, Route, NavLink,Switch } from "react-router-dom";
 
 class App extends Component {
@@ -184,6 +185,16 @@ class App extends Component {
           <Content sidebar={ menu } match={match}/>
       );
     }
+    RenderMain = () => {
+      return (
+          <Main 
+            tinhNang={this.state.arrTN}
+            ecount={this.state.arrEC}
+            dichVu={this.state.arrDV}
+            sanPham={this.state.arrSP}
+            gioiThieu={this.state.arrGT}/>
+      );
+    }
     render() {
       let menu = [];
         return (
@@ -198,7 +209,7 @@ class App extends Component {
             {/*<Main/>*/}
             {/*<Content/>*/}
             <Switch>
-              <Route exact path='/' component={ Main }/>
+              <Route exact path='/' component={ () => this.RenderMain() }/>
               {this.state.arrTN.routes.map((item, index)=>
                   <Route key={index} path={ `${item.path}/:id` } component={ ({match})=>this.RenderContent( this.state.arrTN, {match})}/>
               )}
@@ -214,6 +225,7 @@ class App extends Component {
               {this.state.arrGT.routes.map((item, index)=>
                   <Route key={index} path={ `${item.path}/:id` } component={ ({match})=>this.RenderContent( this.state.arrGT, {match})}/>
               )}
+              <Route component={ NoMatch }/>
             </Switch>
             <Footer/>
             {/*<div style={{backgroundColor: 'green', height: '400px'}}>

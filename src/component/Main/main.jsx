@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
 import './main.css';
+import Comment from './Comment/comment.jsx';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 class Main extends Component {
     constructor(props) {
         super(props);
-    }
-
-    comment = () =>{
-        return (
-            <div className="comment-1 col-md-10 container-fluid">
-                <div className="row">
-                    <div className="img-comment col-md-5">
-                        <img src="Img/comment/comment-1.png" alt=""/>
-                    </div>
-                    <div className="detail-comment col-md-7">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,</p>
-                    </div>
-                </div>
-            </div>
-        );
+        // console.log('aaaaaaaa')
     }
 
     render() {
+        let option=0;
         return (	
             <div className="main container-fluid">
             	<div className="visual container-fluid">
@@ -31,8 +20,8 @@ class Main extends Component {
                             <p>chỉ 1.000.000 đồng mỗi tháng</p>
                     </div>
                     <ul className="visual-detail">
-                        <li><a href="#"><img src="Img/icon/ico-nen-tang-erp.png" alt=""/><br/>NỀN TẢNG WEB</a></li>
-                        <li><a href="#"><img src="Img/icon/icon-quan-ly-kho.png" alt=""/><br/>QUẢN LÝ KHO</a></li>
+                        <li><NavLink to={`${this.props.tinhNang.routes[0].path}/${this.props.tinhNang.routes[0].subroute[0].id}`}><img src="Img/icon/ico-nen-tang-erp.png" alt=""/><br/>NỀN TẢNG WEB</NavLink></li>
+                        <li><NavLink to={`${this.props.tinhNang.routes[1].path}/${this.props.tinhNang.routes[1].subroute[0].id}`}><img src="Img/icon/icon-quan-ly-kho.png" alt=""/><br/>QUẢN LÝ KHO</NavLink></li>
                         <li><a href="#"><img src="Img/icon/icon-san-xuat.png" alt=""/><br/>SẢN XUẤT</a></li>
                         <li><a href="#"><img src="Img/icon/icon-ban-hang.png" alt=""/><br/>BÁN HÀNG</a></li>
                         <li><a href="#"><img src="Img/icon/icon-mua-hang.png" alt=""/><br/>MUA HÀNG</a></li>
@@ -43,19 +32,11 @@ class Main extends Component {
                 </div>
             	<div className="comment">
             		<div className="comment-slide container-fluid">
-                        <div className="row"> 
-                            <button className="prev col-md-1">
-                                <i className="fas fa-chevron-left 7x" />
-                            </button>
-                            { this.comment() }
-                            <button className="next col-md-1">
-                                    <i className="fas fa-chevron-right next" />
-                            </button>
-                        </div>
+                        <Comment/>
                     </div>
 					<div className="more-comment container-fluid">
 						<p>Hãy cũng xem những câu chuyện từ khách hàng khác</p>
-						<button>Xem ngay tại đây   <i className="fas fa-plus"/></button>
+						<button><NavLink to={`${this.props.gioiThieu.routes[1].path}/${this.props.gioiThieu.routes[1].subroute[0].id}`}>Xem ngay tại đây   <i className="fas fa-plus"/></NavLink></button>
 					</div>
             	</div>
 				<div className="statistic">
@@ -84,7 +65,9 @@ class Main extends Component {
                     </ul>
                     <div className="more-statistic">
                         <p>1.256 ngành hàng kinh doanh khác nhau<br/>đang tin dùng ECOUNT ERP</p>
-                        <button> Xem chi tiết <i className="fas fa-plus"/></button>
+                        <button><NavLink to={`${this.props.ecount.routes[1].path}/${this.props.ecount.routes[1].subroute[0].id}`}>
+                            Xem chi tiết <i className="fas fa-plus"/>
+                        </NavLink></button>
                     </div>
                 </div>		
 				<div className="merit container-fluid">
@@ -167,9 +150,9 @@ class Main extends Component {
                 <div className="trial">
                     <p>Chỉ 1.000.000 đồng mỗi tháng với đầy đủ tính năng <br/>
                     Miễn phí 7 ngày dùng thử ngay hôm nay</p>
-                    <button>
+                    <button><NavLink to={`${this.props.sanPham.routes[0].path}/${this.props.ecount.routes[0].subroute[0].id}`}>
                             Yêu cầu dùng thử <i className="fas fa-plus" />
-                    </button>
+                    </NavLink></button>
                 </div>
             </div>
         );
