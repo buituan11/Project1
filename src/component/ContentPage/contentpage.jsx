@@ -13,11 +13,11 @@ class Content extends Component {
     showSideBar = ( sidebar ) => {
     	return sidebar.routes.map((item, index) =>
     		<li key={ index }> 
-				<NavLink to={item.subroute[0].path} activeClassName="active-side-bar" >
+				<NavLink to={`${item.path}/${item.subroute[0].id}`} >   {/*activeClassName="active-side-bar"*/}
 					{ item.title } <i className="fas fa-chevron-down"/>
 				</NavLink> 
 				{item.subroute.map((e,index)=>
-					<NavLink to={e.path} activeClassName="active-sub-route" className="sub-route">
+					<NavLink key={index} to={`${item.path}/${e.id}`} activeClassName="active-sub-route" className="sub-route">
 						{e.title}
 					</NavLink>
 				)}
@@ -29,9 +29,11 @@ class Content extends Component {
     		<Item title={title}/>
     	);
     }
+    componentDidMount() {
+    }
     render() {
         return (
-        <Router>
+        <Router >
 			<div className="content-page container-fluid">
 			<div className="row">
 				<div className="side-bar col-md-3">
@@ -41,8 +43,8 @@ class Content extends Component {
 						</ul>
 				</div>
 				{this.props.sidebar.routes.map((item) =>
-					item.subroute.map((e, index) =>
-						<Route key={index} exact path={e.path} component={ ()=> this.showItem(e.title) }/>
+					item.subroute.map((e, index) =>	
+						<Route key={index} path={`${item.path}/${e.id}`} component={ ()=> this.showItem(e.title) }/>
 					)
 				)}
 			</div>
@@ -53,3 +55,24 @@ class Content extends Component {
 }
 
 export default Content;
+  //   render() {
+  //       return (
+  //       <Router>
+		// 	<div className="content-page container-fluid">
+		// 	<div className="row">
+		// 		<div className="side-bar col-md-3">
+		// 			<h1>{this.props.sidebar.title}</h1>
+		// 				<ul>
+		// 					{ this.showSideBar( this.props.sidebar )}
+		// 				</ul>
+		// 		</div>
+		// 		{this.props.sidebar.routes.map((item) =>
+		// 			item.subroute.map((e, index) =>
+		// 				<Route key={index} exact path={e.path} component={ ()=> this.showItem(e.title) }/>
+		// 			)
+		// 		)}
+		// 	</div>
+		// 	</div>      
+		// </Router>      
+  //       );
+  //   }
