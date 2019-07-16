@@ -8,7 +8,9 @@ class Main extends Component {
         super(props);
         // console.log('aaaaaaaa')
     }
-
+    componentDidMount() {
+        window.scroll(0, 0);
+    }
     render() {
         let option=0;
         return (	
