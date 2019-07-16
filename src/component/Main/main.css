@@ -6,13 +6,10 @@
 	background: url(https://res.cloudinary.com/buituan/image/upload/v1562319274/Project1/bg.jpg) center center fixed;
 	background-size: cover;
 	background-color: red;
-	height: 700px;
 	z-index: -1;
 	padding: 0px;
-	/*filter: blur(3px);*/
 }
 .visual-title{
-	height: 50%;
 	background-color: #00000070;
 	text-align: center;
 	padding-top: 10%;
@@ -26,12 +23,11 @@
 .visual-detail{
 	padding:0% 25% 10% 25%;
 	list-style-type: none;
-	height: 50%;
+	/*height: 50%;*/
 	background-color: #00000070;
 	color: white;
 	display: grid;
-	grid-template-columns: repeat(4,minmax(150px,0.5fr));
-	grid-template-rows: repeat(2,minmax(150px,1fr));
+	grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
 	grid-gap: 10px;
 }
 .visual-detail li{
@@ -45,8 +41,6 @@
 .visual-detail li a img{
 	margin-top: 20%;
 	margin-bottom: 10%;
-	width: 60px;
-	height: 60px;
 }
 .visual-detail li:hover{
 	background-color: var(--redColor);
@@ -58,7 +52,7 @@
 	flex-direction: column;
 }
 .comment{
-	padding: 90px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 .prev, .next{
 	background-color: white;
@@ -71,14 +65,6 @@
 }
 .next:hover{
 	color: black;
-}
-.comment-1{
-	height: 350px;
-	padding: 
-}
-.img-comment img{
-	width: 100%;
-	height: 100%;
 }
 .detail-comment{
 	text-align: justify;
@@ -134,7 +120,7 @@
 	background-color: #000000a6;
 	padding: 90px 10% 5% 10%;
 	display: grid;
-	grid-template-columns: repeat(4, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-gap: 20px;
 }
 .statistic h1{
@@ -177,7 +163,6 @@
 	padding: 5% 0% 5% 0%;
 	background-color: #00487A;
 	color: white;
-	height: 850px;
 }
 .merit p{
 	font-size: 40px;
@@ -187,8 +172,8 @@
 	list-style-type: none;
 	padding: 5% 10% 0% 10%;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(40%,1fr));
-	grid-gap: 15%;
+	grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+	grid-gap: 20px;
 	word-wrap: break-word;
 }
 .merit ul li{

@@ -16,12 +16,12 @@ class Main extends Component {
         return (	
             <div className="main container-fluid">
             	<div className="visual container-fluid">
-                    <div className="visual-title">
+                    <div className="visual-title container-fluid">
                             <p>Hãy trải nghiệm tất cả tính năng của ECOUNT ERP</p>
                             <p>để Thay Đổi Hiệu Quả</p>
                             <p>chỉ 1.000.000 đồng mỗi tháng</p>
                     </div>
-                    <ul className="visual-detail">
+                    <ul className="visual-detail container-fluid">
                         <li><NavLink to={`${this.props.tinhNang.routes[0].path}/${this.props.tinhNang.routes[0].subroute[0].id}`}><img src="Img/icon/ico-nen-tang-erp.png" alt=""/><br/>NỀN TẢNG WEB</NavLink></li>
                         <li><NavLink to={`${this.props.tinhNang.routes[1].path}/${this.props.tinhNang.routes[1].subroute[0].id}`}><img src="Img/icon/icon-quan-ly-kho.png" alt=""/><br/>QUẢN LÝ KHO</NavLink></li>
                         <li><a href="#"><img src="Img/icon/icon-san-xuat.png" alt=""/><br/>SẢN XUẤT</a></li>

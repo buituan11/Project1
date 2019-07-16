@@ -25,7 +25,53 @@ class App extends Component {
                       {
                         id: 2,
                         title: "Tính năng 2",
-                      }
+                      },
+                      {
+                        id: 3,
+                        title: "Tính năng 3",
+                      },{
+                        id: 4,
+                        title: "Tính năng 4",
+                      },{
+                        id: 5,
+                        title: "Tính năng 5",
+                      },{
+                        id: 6,
+                        title: "Tính năng 6",
+                      },{
+                        id: 7,
+                        title: "Tính năng 7",
+                      },{
+                        id: 8,
+                        title: "Tính năng 8",
+                      },{
+                        id: 9,
+                        title: "Tính năng 9",
+                      },{
+                        id: 0,
+                        title: "Tính năng 10",
+                      },{
+                        id: 11,
+                        title: "Tính năng 11",
+                      },{
+                        id: 12,
+                        title: "Tính năng 12",
+                      },{
+                        id: 13,
+                        title: "Tính năng 13",
+                      },{
+                        id: 14,
+                        title: "Tính năng 14",
+                      },{
+                        id: 15,
+                        title: "Tính năng 15",
+                      },{
+                        id: 16,
+                        title: "Tính năng 16",
+                      },{
+                        id: 17,
+                        title: "Tính năng 17",
+                      },
                     ]   //Nền tảng web
                   },
                   {
@@ -206,8 +252,6 @@ class App extends Component {
               dichVu={this.state.arrDV}
               sanPham={this.state.arrSP}
               gioiThieu={this.state.arrGT}/>
-            {/*<Main/>*/}
-            {/*<Content/>*/}
             <Switch>
               <Route exact path='/' component={ () => this.RenderMain() }/>
               {this.state.arrTN.routes.map((item, index)=>
